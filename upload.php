@@ -1,4 +1,8 @@
 
+<?php
+SESSION_start();
+?>
+
 
 
          <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -99,13 +103,18 @@
          	<body>
 
          	<div class="fh5co-loader"></div>
-
          	<div id="page">
-                  	 <div class="topnav">
+
+            	 <div class="topnav">
   <a class="active" href="home.html">الصفحة الرئيسية</a>
   <a href="home.html">إقرأ</a>
   <a href="contactus.html">تواصل معانا</a>
   <a href="registration.html">التسجيل</a>
+  <!-- logged in user information -->
+		<?php  if (isset($_SESSION['username'])) : ?>
+			<a><strong><?php echo $_SESSION['username']; ?></strong> مرحبا </a>
+			<p> <a href="index.php?logout='1'" style="color: red;">تسجيل خروج</a> </p>
+		<?php endif ?>
 </div>
 
            <aside id="fh5co-hero" class="js-fullheight">

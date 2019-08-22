@@ -11,10 +11,8 @@ SESSION_start();
              <meta charset="utf-8">
           <link rel ="stylesheet" type="text/css" href=" css/style.css">
          <meta name="viewport" content="width=device-width, initial-scale=1">
-         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 
          	<meta http-equiv="X-UA-Compatible" content="IE=edge">
           	<meta name="viewport" content="width=device-width, initial-scale=1">
          	<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
@@ -71,37 +69,85 @@ SESSION_start();
          	<!--[if lt IE 9]>
          	<script src="js/respond.min.js"></script>
          	<![endif]-->
-         
+         <style>
+         .books{
+     width: 80px;
+    height: 80px;
+    position: absolute;
+    left: 830px;
+       top: 1000px;
+     z-index: 0;
+             }
+           .booksPosition {
+              position: absolute;
+    left: 800px;
+        top: 1100px;
+        z-index: 1;
+
+              }
+
+
+                  .memo{
+       width: 80px;
+    height: 80px;
+    position: absolute;
+    left: 650px;
+       top: 1000px;
+     z-index: 0;
+             }
+           .memoPosition {
+                 position: absolute;
+    left: 650px;
+        top: 1100px;
+		 z-index: 1;
+
+
+              }
+
+.topnav {
+  overflow: hidden;
+  background-color: white;
+}
+
+.topnav a {
+  float: right;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: grey;
+  color: white;
+}
+
+.topnav a.active {
+  background-color: black;
+  color: white;
+}
+
+         </style>
          </head>
          	<body>
 
-         	<div class="fh5co-loader"></div>
-
+ 
          	<div id="page">
-         	<nav class="fh5co-nav" role="navigation">
-         		<div class="top-menu">
-         			<div class="container-fluid">
-         				<div class="row">
-         					<div class="col-xs-2">
-         						<div id="fh5co-logo"><a href="home.html">Reading<span>.</span></a></div>
-         					</div>
-         					<div class="col-xs-10 text-right menu-1">
-         						<ul>
-         							<li><a href="home.html">Home</a></li>
+            	 <div class="topnav">
+  <a class="active" href="home.html">الصفحة الرئيسية</a>
+  <a href="home.html">إقرأ</a>
+  <a href="contactus.html">تواصل معانا</a>
+  <a href="#about">التسجيل</a>
+  <!-- logged in user information -->
+		<?php  if (isset($_SESSION['username'])) : ?>
+			<a><strong><?php echo $_SESSION['username']; ?></strong> مرحبا </a>
+			<p> <a href="index0.php?logout='1'" style="color: red;">تسجيل خروج</a> </p>
+		<?php endif ?>
+</div>
 
-
-         							<li class="active"><a href="contactus.html">contactus</a></li>
-         							<li class="btn-cta"><a href="#"><span>Login</span></a></li>
-         						</ul>
-         					</div>
-         				</div>
-
-         			</div>
-         		</div>
-         	</nav>
-
-           <aside id="fh5co-hero" class="js-fullheight">
-           <div class="flexslider js-fullheight">
+           <aside id="fh5co-hero" >
+           <div class="flexslider ">
              <ul class="slides">
                <li class="holder" style="background-image: url(http://blog.bookbaby.com/wp-content/uploads/2016/05/Book-and-eBook-Banner.jpg);">
 
@@ -109,9 +155,15 @@ SESSION_start();
                </li>
                </ul>
              </div>
+			 </br>
+</br></br></br></br>
+
          </aside>
+
            <div id="fh5co-product">
            		<div class="container">
+
+
 
 
 
@@ -232,33 +284,10 @@ SESSION_start();
 
 
 
+
+
   <footer id="fh5co-footer" role="contentinfo">
-  <div class="container">
-  <div class="row row-pb-md">
-    <div class="col-md-4 fh5co-widget">
-      <h4>Reading</h4>
-      <p>An online system that targets all readers or reading enthusiasts so that they provide them with the required books. In addition, there is space for the reader to leave his notes or a notebook of his own. Also, the reader can communicate with the "Read" system easily as possible to save his needs and put his opinion</p>
-    </div>
-    <div class="col-md-4 col-md-push-1">
-      <h4>Links</h4>
-      <ul class="fh5co-footer-links">
-        <li><a href="home">Home</a></li>
 
-        <li><a href="contactus">Contact us</a></li>
-      </ul>
-    </div>
-
-    <div class="col-md-4 col-md-push-1">
-      <h4>Contact Information</h4>
-      <ul class="fh5co-footer-links">
-        <li>198 West 21th Street, <br> Suite 721 New York NY 10016</li>
-        <li><a href="tel://1234567920">+ 1235 2355 98</a></li>
-        <li><a href="mailto:info@yoursite.com">info@yoursite.com</a></li>
-        <li><a href="http://gettemplates.co">gettemplates.co</a></li>
-      </ul>
-    </div>
-
-  </div>
 
   <div class="row copyright">
     <div class="col-md-12 text-center">

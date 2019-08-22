@@ -181,13 +181,17 @@ SESSION_start();
 
            	<div class="fh5co-loader"></div>
 
-                   	 <div class="topnav">
+                   	            	 <div class="topnav">
   <a class="active" href="home.html">الصفحة الرئيسية</a>
   <a href="home.html">إقرأ</a>
   <a href="contactus.html">تواصل معانا</a>
-  <a href="registration.html">التسجيل</a>
+  <a href="#about">التسجيل</a>
+  <!-- logged in user information -->
+		<?php  if (isset($_SESSION['username'])) : ?>
+			<a><strong><?php echo $_SESSION['username']; ?></strong> مرحبا </a>
+			<p> <a href="index0.php?logout='1'" style="color: red;">تسجيل خروج</a> </p>
+		<?php endif ?>
 </div>
-
             <div class="header">
 
  
